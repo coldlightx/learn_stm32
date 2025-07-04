@@ -1,0 +1,8 @@
+start\startup_stm32f10x_md.s,
+start\core_cm3.c,
+start\core_cm3.h,
+start\stm32f10x.h,
+start\system_stm32f10x.c,
+start\system_stm32f10x.h,
+user\main.c 
+TO project NOPRINT
