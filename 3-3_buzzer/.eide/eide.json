@@ -2,7 +2,10 @@
   "name": "3-3_buzzer",
   "type": "ARM",
   "dependenceList": [],
-  "srcDirs": ["src", "hal"],
+  "srcDirs": [
+    "src",
+    "hal"
+  ],
   "outDir": "build",
   "deviceName": "STM32F102C8",
   "packDir": null,
@@ -66,7 +69,8 @@
             }
           ]
         },
-        "options": "null"
+        "options": "null",
+        "archExtensions": ""
       },
       "uploader": "STLink",
       "uploadConfig": {
@@ -103,7 +107,10 @@
           "hal/STM32F10x_StdPeriph_Driver/src"
         ],
         "libList": [],
-        "defineList": ["USE_STDPERIPH_DRIVER", "STM32F10X_MD"]
+        "defineList": [
+          "USE_STDPERIPH_DRIVER",
+          "STM32F10X_MD"
+        ]
       },
       "builderOptions": {
         "GCC": {
@@ -138,5 +145,5 @@
       }
     }
   },
-  "version": "3.5"
+  "version": "3.6"
 }
