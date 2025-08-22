@@ -22,7 +22,7 @@ void IC_init()
 
     TIM_ICInitTypeDef ic_config;
     ic_config.TIM_Channel     = TIM_Channel_1;
-    ic_config.TIM_ICFilter    = 0x00;
+    ic_config.TIM_ICFilter    = 0x0F;
     ic_config.TIM_ICPolarity  = TIM_ICPolarity_Rising;
     ic_config.TIM_ICPrescaler = TIM_ICPSC_DIV1;
     ic_config.TIM_ICSelection = TIM_ICSelection_DirectTI;
