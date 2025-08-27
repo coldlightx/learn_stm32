@@ -23,8 +23,8 @@ int main(int argc, char const *argv[])
 
 void TIM2_IRQHandler()
 {
-    int current_position;
     // 0.5s
+    int current_position;
     if (TIM_GetITStatus(TIM2, TIM_IT_Update) == SET) {
         current_position = encoder_get_position();
         speed            = (current_position - last_position) * 2;
