@@ -1,10 +1,10 @@
 #include "stm32f10x.h"
 #include "system/Delay.h"
 
-#define RCC_PORT RCC_APB2Periph_GPIOB
-#define PORT     GPIOB
-#define SCL      GPIO_Pin_0
-#define SDA      GPIO_Pin_1
+#define RCC_PORT RCC_APB2Periph_GPIOA
+#define PORT     GPIOA
+#define SCL      GPIO_Pin_9
+#define SDA      GPIO_Pin_8
 
 void MyI2C_init()
 {
@@ -46,6 +46,7 @@ void MyI2C_start()
 
 void MyI2C_stop()
 {
+    MyI2C_sda_write(0);
     MyI2C_scl_write(1);
     MyI2C_sda_write(1);
 }
@@ -136,4 +137,24 @@ uint8_t MyI2C_read_data_byte(uint8_t device_addr, uint8_t reg_addr)
     uint8_t data;
     MyI2C_read_data_arr(device_addr, reg_addr, &data, 1);
     return data;
+}
+
+void MyI2C_read_data_uint16(uint8_t device_addr, uint8_t reg_addr_start, uint16_t *arr, uint8_t length)
+{
+    MyI2C_start();
+    MyI2C_send_byte(device_addr);
+    MyI2C_send_byte(reg_addr_start);
+    MyI2C_start();
+    MyI2C_send_byte(device_addr | 0x01);
+
+    uint8_t need_continue = 1;
+
+    for (int i = 0; i < length; i++) {
+        arr[i] = 0;
+        arr[i] = MyI2C_receive_byte(need_continue) << 8;
+        if (i >= length - 1)
+            need_continue = 0;
+        arr[i] |= MyI2C_receive_byte(need_continue);
+    }
+    MyI2C_stop();
 }

@@ -1,5 +1,6 @@
 #if !defined(__MPU6050_REG_H)
 #define __MPU6050_REG_H
+#include "cmsis_compiler.h"
 
 #define SMPLRT_DIV             0x19
 #define CONFIG                 0x1A

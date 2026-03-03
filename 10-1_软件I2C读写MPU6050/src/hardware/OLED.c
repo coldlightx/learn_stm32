@@ -256,6 +256,25 @@ void OLED_ShowHexArray(unsigned int row, unsigned int column, uint8_t *arr, unsi
     }
 }
 
+void OLED_ShowFloat(unsigned int row, unsigned int column, float number, unsigned int length, unsigned int precision)
+{
+    char sign;
+
+    if (number < 0) {
+        sign   = '-';
+        number = -number;
+    } else
+        sign = '+';
+
+    int int_part            = (int)number;
+    int decimal             = (number - int_part) * OLED_Pow(10, precision);
+    unsigned int int_length = length - 2 - precision;
+    OLED_ShowChar(row, column, sign);
+    OLED_ShowNum(row, column + 1, int_part, int_length);
+    OLED_ShowChar(row, column + 1 + int_length, '.');
+    OLED_ShowNum(row, column + 2 + int_length, decimal, precision);
+}
+
 /**
  * @brief  OLED初始化
  * @param  无

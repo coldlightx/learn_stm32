@@ -12,5 +12,6 @@ void OLED_ShowSignedNum(uint8_t Line, uint8_t Column, int32_t Number, uint8_t Le
 void OLED_ShowHexNum(uint8_t Line, uint8_t Column, uint32_t Number, uint8_t Length);
 void OLED_ShowBinNum(uint8_t Line, uint8_t Column, uint32_t Number, uint8_t Length);
 void OLED_ShowHexArray(unsigned int row, unsigned int column, uint8_t *arr, unsigned int length);
+void OLED_ShowFloat(unsigned int row, unsigned int column, float number, unsigned int length, unsigned int precision);
 
 #endif
