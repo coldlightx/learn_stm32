@@ -1,5 +1,5 @@
 #include "stm32f10x.h"
-#include "MyI2C.h"
+#include "MyI2C_hardware.h"
 #include "MPU6050_REG.h"
 #include "MPU6050.h"
 
