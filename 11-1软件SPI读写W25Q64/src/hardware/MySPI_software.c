@@ -33,7 +33,7 @@ void MySPI_init()
 
     GPIO_InitTypeDef gpio_config;
     gpio_config.GPIO_Speed = GPIO_Speed_50MHz;
-    gpio_config.GPIO_Pin   = MYSPI_MOSI | MYSPI_SCLK | MYSPI_CS;
+    gpio_config.GPIO_Pin   = MYSPI_MOSI | MYSPI_SCK | MYSPI_CS;
     gpio_config.GPIO_Mode  = GPIO_Mode_Out_PP;
     GPIO_Init(MYSPI_GPIO, &gpio_config);
 
