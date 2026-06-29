@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
     button_init();
     OLED_Clear();
 
-    OLED_ShowString(1, 1, "IWDG_TEST");
+    OLED_ShowString(1, 1, "IWDG TEST");
     if (RCC_GetFlagStatus(RCC_FLAG_IWDGRST) == SET) {
         OLED_ShowString(2, 1, "IWDGRST");
         Delay_ms(500);
