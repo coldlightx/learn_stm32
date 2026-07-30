@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
     button_init();
     MyCAN_init();
 
-    // 读取设备id前作为CAN通信id(每个设备唯一独立)
+    // 读取设备id作为CAN通信id(每个设备唯一独立)
     uint32_t TX_ID = *((__IO uint16_t *)0x1FFFF7E8) & 0x7FF;
 
     OLED_ShowString(1, 1, "TXID:");
