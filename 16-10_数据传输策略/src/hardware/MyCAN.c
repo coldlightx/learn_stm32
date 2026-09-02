@@ -44,7 +44,7 @@ void MyCAN_init()
     NVIC_Init(&nvic_config);
 
     CAN_InitTypeDef can_config;
-    can_config.CAN_Mode = CAN_Mode_LoopBack;
+    can_config.CAN_Mode = CAN_Mode_Normal;
     // 36MHZ / 6 / (1 + 2 + 3) = 1MHZ
     can_config.CAN_Prescaler = 6;
     can_config.CAN_BS1       = CAN_BS1_2tq;
